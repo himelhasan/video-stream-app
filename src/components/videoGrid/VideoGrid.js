@@ -23,7 +23,9 @@ const VideoGrid = () => {
   if (!isError && !isLoading && videos?.length === 0)
     content = <div className="col-span-12">No Video Found</div>;
   if (!isError && !isLoading && videos?.length > 0)
-    content = videos.map((video) => <SingleVideo></SingleVideo>);
+    content = videos.map((video) => (
+      <SingleVideo key={video.id} video={video}></SingleVideo>
+    ));
 
   return (
     <section className="pt-12">

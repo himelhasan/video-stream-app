@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
 import SingleRelatedVideo from "../components/singleRelatedVideo/SingleRelatedVideo";
 import VideoPlayer from "../components/videoPlayer/VideoPlayer";
+import { fetchSingleVideo } from "../redux/features/singleVideo/singleVideoSlice";
 
 const SingleVideoPage = () => {
+  const params = useParams();
+  console.log(params);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchSingleVideo());
+  }, {});
+
   return (
     <section className="pt-6 pb-20">
       <div className="mx-auto max-w-7xl px-2 pb-20 min-h-[400px]">

@@ -1,8 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
+import singleVideoReducer from "../redux/features/singleVideo/singleVideoSlice";
+import tagsReducer from "../redux/features/tags/tagsSlice";
 import videoReducer from "../redux/features/video/videoSlice";
 
 export const store = configureStore({
   reducer: {
     video: videoReducer,
+    tags: tagsReducer,
+    singleVideo: singleVideoReducer,
   },
 });
