@@ -33,7 +33,7 @@ const SingleVideo = ({ video }) => {
 
         <div className="flex flex-row mt-2 gap-2">
           <Link to="#" className="shrink-0">
-            <img src={avatar} className="rounded-full h-6 w-6" alt="Learn with Sumit" />
+            <img src={avatar} className="rounded-full h-6 w-6" alt="Himel Hasan" />
           </Link>
 
           <div className="flex flex-col">

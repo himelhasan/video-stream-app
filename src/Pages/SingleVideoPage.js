@@ -19,8 +19,6 @@ const SingleVideoPage = () => {
   const singleVideo = useSelector((state) => state.singleVideo);
   const { isLoading, isError, error, video } = singleVideo;
 
-  console.log(video.id, video.tags);
-
   // conditionally render the video
   let content;
   if (isLoading) content = <Loading />;

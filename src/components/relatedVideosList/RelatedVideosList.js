@@ -10,7 +10,7 @@ const RelatedVideosList = ({ currentVideoId, tags }) => {
   const { isLoading, isError, error, relatedVideos } = useSelector(
     (state) => state.relatedVideo
   );
-  console.log({ currentVideoId, tags });
+
   useEffect(() => {
     dispatch(fetchRelatedVideo({ tags, id: currentVideoId }));
   }, [dispatch, currentVideoId, tags]);

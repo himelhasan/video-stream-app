@@ -1,6 +1,6 @@
 # lws-json-server-todos
 
-Example in memory todos api with json-server by Learn with Sumit
+Example in memory todos api with json-server by Himel Hasan
 
 # Installation
 
@@ -38,7 +38,7 @@ POST http://localhost:3000/todos text="Learn Redux" completed=false color="red"
 Update todo (PUT):
 
 ```bash
-PUT http://localhost:3000/todos/3 name="Learn Redux with Learn with Sumit" completed=true color="green"
+PUT http://localhost:3000/todos/3 name="Learn Redux with Himel Hasan" completed=true color="green"
 ```
 
 Delete todo (DELETE):
@@ -47,9 +47,8 @@ Delete todo (DELETE):
 DELETE http://localhost:3000/todos/1
 ```
 
-
 # Links
 
 - https://github.com/typicode/json-server
-- Jswon view Chrome plugin: https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc
-- Learn with Sumit official website: htts://learnwithsumit.com
+- Json view Chrome plugin: https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc
+- Himel Hasan official website: https://himelhasan.com
