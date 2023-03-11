@@ -11,10 +11,13 @@ const initialState = {
 };
 
 // thunk functions that fetch videos from fetch api
-export const fetchVideos = createAsyncThunk("video/fetchVideo", async () => {
-  const videos = await getVideos();
-  return videos;
-});
+export const fetchVideos = createAsyncThunk(
+  "video/fetchVideo",
+  async ({ tags, search }) => {
+    const videos = await getVideos(tags, search);
+    return videos;
+  }
+);
 
 //  video slice
 const videoSlice = createSlice({

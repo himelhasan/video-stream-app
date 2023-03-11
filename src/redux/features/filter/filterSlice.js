@@ -22,11 +22,11 @@ const filterSlice = createSlice({
       }
     },
 
-    search: (state, action) => {
+    searchAction: (state, action) => {
       state.search = action.payload;
     },
   },
 });
 
 export default filterSlice.reducer;
-export const { tagRemoved, tagSelected, search } = filterSlice.actions;
+export const { tagRemoved, tagSelected, searchAction } = filterSlice.actions;
