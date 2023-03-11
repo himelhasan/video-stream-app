@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Loading from "../components/loading/Loading";
-import SingleRelatedVideo from "../components/singleRelatedVideo/SingleRelatedVideo";
+import RelatedVideosList from "../components/relatedVideosList/RelatedVideosList";
 import VideoPlayer from "../components/videoPlayer/VideoPlayer";
 import { fetchSingleVideo } from "../redux/features/singleVideo/singleVideoSlice";
 
@@ -19,6 +19,8 @@ const SingleVideoPage = () => {
   const singleVideo = useSelector((state) => state.singleVideo);
   const { isLoading, isError, error, video } = singleVideo;
 
+  console.log(video.id, video.tags);
+
   // conditionally render the video
   let content;
   if (isLoading) content = <Loading />;
@@ -28,12 +30,13 @@ const SingleVideoPage = () => {
   if (!isError && !isLoading && video?.id)
     content = (
       <div className="grid grid-cols-3 gap-2 lg:gap-8">
-        {/* <!-- related videos --> */}
+        {/* <!-- video player --> */}
         <VideoPlayer video={video}></VideoPlayer>
-        <div className="col-span-full lg:col-auto max-h-[570px] overflow-y-auto">
-          {/* <!-- single related video --> */}
-          <SingleRelatedVideo id={video.id} tags={video.tags}></SingleRelatedVideo>
-        </div>
+        {/* <!-- related videos --> */}
+        <RelatedVideosList
+          currentVideoId={video.id}
+          tags={video.tags}
+        ></RelatedVideosList>
       </div>
     );
 
